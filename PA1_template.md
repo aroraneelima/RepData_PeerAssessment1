@@ -26,6 +26,7 @@ hist(res$`Total Steps`, breaks = 20, main ="Number of Steps", xlab = "Total Numb
 
 ![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2-1.png)
 
+
 ### 2. Calculate and report the mean and median of the total number of steps taken per day
 ==============================================================
 
@@ -73,7 +74,7 @@ res2[which.max(res2$Mean_steps_on_all_dates),]
 ```
 Imputing missing values
 ==============================================================
-## 1.Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with NAs)
+## 1. Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with NAs)
 ==============================================================
 
 ```r
@@ -104,6 +105,7 @@ join_res <- join(activities, res_median, by="interval", type="inner")
 
 join_res$steps <-with(join_res,   ifelse(is.na(join_res$steps),Median_steps_on_all_dates,steps))
 ```
+
 ## 4. Make a histogram of the total number of steps taken each day and Calculate and report the mean and median total number of steps taken per day. Do these values differ from the estimates from the first part of the assignment? What is the impact of imputing missing data on the estimates of the total daily number of steps?
 ==============================================================
 
