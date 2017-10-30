@@ -13,8 +13,8 @@ activities_f <-subset(activities, is.na(activities$steps)==F)
 
 ## What is mean total number of steps taken per day?
 
-1. Calculate the total number of steps taken per day and plot a histogram
-==============================================================
+### 1. Calculate the total number of steps taken per day and plot a histogram
+
 
 ```r
 activities_f$date <- as.Date(activities_f$date)
@@ -28,7 +28,7 @@ hist(res$`Total Steps`, breaks = 20, main ="Number of Steps", xlab = "Total Numb
 
 
 ### 2. Calculate and report the mean and median of the total number of steps taken per day
-==============================================================
+
 
 ```r
 mean(res$`Total Steps`)
@@ -107,7 +107,7 @@ join_res$steps <-with(join_res,   ifelse(is.na(join_res$steps),Median_steps_on_a
 ```
 
 ## 4. Make a histogram of the total number of steps taken each day and Calculate and report the mean and median total number of steps taken per day. Do these values differ from the estimates from the first part of the assignment? What is the impact of imputing missing data on the estimates of the total daily number of steps?
-==============================================================
+
 
 
 ```r
@@ -120,8 +120,8 @@ hist(totstepeachday$`Total Steps Each Day`, breaks = 20,
 ```
 
 ![plot of chunk unnamed-chunk-9](figure/unnamed-chunk-9-1.png)
-Calculate and report the mean and median total number of steps taken per day
-==============================================================
+
+### Calculate and report the mean and median total number of steps taken per day
 
 
 ```r
@@ -179,7 +179,7 @@ join_res$weekday_1<- ifelse(join_res$weekday %in% c("Saturday","Sunday"), "Weeke
 ```
 
 ## 2. Make a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). See the README file in the GitHub repository to see an example of what this plot should look like using simulated data.
-==============================================================
+
 
 
 ```r
